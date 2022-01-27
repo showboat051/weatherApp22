@@ -1,8 +1,10 @@
-// // function fetchWeather() {
-// //    fetch('api.openweathermap.org/data/2.5/weather?q=London&appid=94f3f05eb827c75e7211a374d0a92167').then(Response => {
-// //        console.log(Response);
-// //    })
-// // }
+// function getWeather() {
+//    fetch('api.openweathermap.org/data/2.5/weather?q=London&appid=94f3f05eb827c75e7211a374d0a92167').then(Response => {
+//        console.log('resolved' , Response);
+//    }).catch((err) => {
+//        console.log('rejected', err);
+//    })
+// }
 
 // // fetchWeather();
 // alert('heyae')
@@ -51,11 +53,27 @@
 //     }
 // }
 
-async function getWeather(city) {
-    const apiKey = "94f3f05eb827c75e7211a374d0a92167";
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    // JSON.parse(JSON.stringify(data))
-    console.log(data);
-}
+// async function getWeather(city) {
+//     const apiKey = "94f3f05eb827c75e7211a374d0a92167";
+//     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+//     const response = await fetch(url);
+//     const data = await response.json();
+//     // JSON.parse(JSON.stringify(data))
+//     console.log(data);
+// }
+
+const ft = new FetchWeather();
+
+const city = document.getElementById("cityBox");
+const button = document.getElementById("submit");
+button.addEventListener( "click" , () => {
+    const currentCity = city.value;
+
+    ft.getWeather(currentCity).then ((data) => {
+        console.log(data);
+    })
+})
+
+
+
+
