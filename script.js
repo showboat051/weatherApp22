@@ -1,5 +1,6 @@
 // function getWeather() {
-//    fetch('api.openweathermap.org/data/2.5/weather?q=London&appid=94f3f05eb827c75e7211a374d0a92167').then(Response => {
+//    fetch('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/dallas?unitGroup=metric&include=current&key=QVYL5LAZMZWQR3BM5H77WSZ3P&contentType=json').then(Response => {
+//        Response.json()
 //        console.log('resolved' , Response);
 //    }).catch((err) => {
 //        console.log('rejected', err);
@@ -8,6 +9,13 @@
 
 // // fetchWeather();
 // alert('heyae')
+
+function getWeather() {
+    fetch('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/dallas?unitGroup=metric&include=current&key=QVYL5LAZMZWQR3BM5H77WSZ3P&contentType=json')
+    .then(res => res.json())
+    .then(data => console.log(data));
+}
+
 
 
 // fetch(`api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}`)
@@ -62,17 +70,17 @@
 //     console.log(data);
 // }
 
-const ft = new FetchWeather();
+// const ft = new FetchWeather();
 
-const city = document.getElementById("cityBox");
-const button = document.getElementById("submit");
-button.addEventListener( "click" , () => {
-    const currentCity = city.value;
+// const city = document.getElementById("cityBox");
+// const button = document.getElementById("submit");
+// button.addEventListener( "click" , () => {
+//     const currentCity = city.value;
 
-    ft.getWeather(currentCity).then ((data) => {
-        console.log(data);
-    })
-})
+//     ft.getWeather(currentCity).then ((data) => {
+//         console.log(data);
+//     })
+// })
 
 
 
