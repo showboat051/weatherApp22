@@ -1,14 +1,17 @@
-function getWeather() {
+function getWeather(cityBox) {
         const apiKey = 'QVYL5LAZMZWQR3BM5H77WSZ3P';
 
-   fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/dallas?unitGroup=metric&include=current&key=${apiKey}&contentType=json`).then(Response => {
+   fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/London,UK?key=${apiKey} `).then(Response => {
       return Response.json();
-       console.log( Response);
    }).then ( data => {
        console.log(data);
-   })
-   
-}
+       const weather = data.currentConditions.temp;
+       const weatherInfoDiv = document.getElementById("weatherInfo");
+       weatherInfoDiv.innerHTML = "The current temperature is " + weather;
+   }).catch(error => {
+       console.log(error)
+   });
+} // getWeather()
 
 // fetchWeather();
 
