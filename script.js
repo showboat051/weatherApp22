@@ -3,8 +3,9 @@
 const weatherInfoDiv = document.getElementById("weatherInfo");
 const weatherDescDiv = document.getElementById("weatherDesc");
 const city = document.getElementById("cityBox").value;
+// const city = document.querySelector("cityBox").value;
 
-function getWeather() {
+function getWeather(city) {
         const apiKey = 'QVYL5LAZMZWQR3BM5H77WSZ3P';
         if (city == '') {
             alert("enter something")

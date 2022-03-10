@@ -1,14 +1,19 @@
-class FetchWeather {
-    async getWeather(input) {
-        const apiKey = "94f3f05eb827c75e7211a374d0a92167";
+let weather = {
+     city: document.querySelector(".citySearchBar"),
 
-        // URL request
+    apiKey: "QVYL5LAZMZWQR3BM5H77WSZ3P",
+    fetchWeather: function(city) {
+        fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + city + "?key=" + this.apiKey)
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+    }, // fetchweather function()
+    searchBar: function() {
+        this.fetchWeather(document.querySelector(".citySearchBar").value)
+    }
+} // end of weather object
 
-        const response = await fetch (`https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${apiKey}`);
 
-        const data = await response.json();
-        console.log(data);
-        return data;
-    } // getWeather()
+document.getElementById("submit").addEventListener('click' , function () {
+    console.log('it works');
+})
 
-} // FetchWeather Class
