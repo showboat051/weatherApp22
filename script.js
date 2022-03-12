@@ -2,12 +2,12 @@
 
 const weatherInfoDiv = document.getElementById("weatherInfo");
 const weatherDescDiv = document.getElementById("weatherDesc");
-const city = document.getElementById("cityBox").value;
 // const city = document.querySelector("cityBox").value;
 
-function getWeather(city) {
+function getWeather() {
+    const city = document.getElementById("cityBox").value;
         const apiKey = 'QVYL5LAZMZWQR3BM5H77WSZ3P';
-        if (city == '') {
+        if (city.value == '') {
             alert("enter something")
         }
 
