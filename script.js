@@ -7,7 +7,7 @@ const weatherDescDiv = document.getElementById("weatherDesc");
 function getWeather() {
     const city = document.getElementById("cityBox").value;
         const apiKey = 'QVYL5LAZMZWQR3BM5H77WSZ3P';
-        if (city.value == '') {
+        if (city.value == ' ') {
             alert("enter something")
         }
 
@@ -16,27 +16,38 @@ function getWeather() {
         
         .then(res => {
             if(res.ok) {
-                console.log(res);
                 return res.json()
             } else {
                 console.log('nope');
             }
         })
-        .then(data =>
-            console.log(data)),
-            console.log("The city is " + city);
+        .then(data => {
+            console.log(data)
+            var currentTemp = data.currentConditions.temp;
+            weatherInfoDiv.innerHTML = "The current temperature here is " + currentTemp;  
+        } 
+
+        )} // getWeather()
+        
        
-// .catch(error => console.log('error'))
-   
-    
-    // const weather = data.currentConditions.temp;
-    // const dayDesc = data.description;
-    // weatherInfoDiv.innerHTML = "The current temperature is " + weather + " with " + dayDesc;
-    
-    // weatherDescDiv.innerHTML = dayDesc;
-
-} // getWeather()
-
-
-
-
+       
+       
+       
+       
+       
+        function showWeather(data) {
+            // const weather = data.description[0];
+        } // showWeather()
+        
+        
+        // .catch(error => console.log('error'))
+        
+        
+        
+        // const weather = data.currentConditions.temp;
+        // const dayDesc = data.description;
+        
+        // weatherDescDiv.innerHTML = dayDesc;
+        
+        
+        
