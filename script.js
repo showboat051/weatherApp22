@@ -24,7 +24,7 @@ function getWeather() {
         .then(data => {
             console.log(data)
             var currentTemp = data.currentConditions.temp;
-            weatherInfoDiv.innerHTML = "The current temperature here is " + currentTemp;  
+            weatherInfoDiv.innerHTML = "The current temperature here in " + city + " is " + currentTemp;  
         } 
 
         )} // getWeather()
