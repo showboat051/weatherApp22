@@ -5,19 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <h1>Do You Need A Coat Today?</h1>
-    <div id="locationArea">
-
+    <!-- container Holds all of the main elements -->
+    <div id="container">
+        <div id="blueBar"></div>
         <h3>Type Your Location Here</h3>
         <input type="text" class="citySearchBar" id="cityBox">
-        <button id="submit" onclick= getWeather() >GO </button>
+        <button id="submit"  onclick= getWeather() >GO </button>
+        
+        <div id="weatherInfo"></div>
+        <div id="weatherDesc"></div>
+        
     </div>
 
-    <div id="weatherInfo"></div>
-    <div id="weatherDesc"></div>
+    <div id="sevenDay">
+        <table>
+            
 
+        </table>
+
+    </div>
     <script src="script.js"></script>
     <!-- <script src="Fetch.js"></script> -->
 </body>
