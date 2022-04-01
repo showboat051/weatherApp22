@@ -40,7 +40,28 @@ function getWeather() {
 
             var table = document.createElement("table");
             const sevenDay = document.getElementById("sevenDay");
-            sevenDay.innerHTML = data.days[0].temp
+            
+            const dayToday = document.getElementById("day0");
+            dayToday.innerHTML = data.days[0].temp;
+
+            const day1 = document.getElementById("day1");
+            day1.innerHTML = data.days[1].temp;
+
+            const day2 = document.getElementById("day2");
+            day2.innerHTML = data.days[2].temp;
+
+            const day3 = document.getElementById("day3");
+            day3.innerHTML = data.days[3].temp;
+
+            const day4 = document.getElementById("day4");
+            day4.innerHTML = data.days[4].temp;
+
+            const day5 = document.getElementById("day5");
+            day5.innerHTML = data.days[5].temp;
+
+            const day6 = document.getElementById("day6");
+            day6.innerHTML = data.days[6].temp;
+            // sevenDay.innerHTML = data.days[0].temp
         } 
         
         )} // getWeather()
