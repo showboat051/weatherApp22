@@ -22,7 +22,7 @@ function getWeather() {
         alert("enter something")
     }
     
-    
+    // API call
     fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?key=${apiKey}`) 
     
     .then(res => {
@@ -62,6 +62,25 @@ function getWeather() {
             const day6 = document.getElementById("day6");
             day6.innerHTML = data.days[6].temp;
             // sevenDay.innerHTML = data.days[0].temp
+
+            // generating the table from clicks
+            const tempTable = document.createElement("table");
+            const tempTableBody = document.createElement("tbody");
+            tempTable.appendChild(tempTableBody);
+
+            for( i = 0; i <data.length; i++) {
+                let temperature = data.days[i].temp
+            }
+
+            for (i= 0; i < 7; i++) {
+                const thDay = document.createElement('th');
+                tempTableBody.appendChild(thDay);
+                const trData = document.createElement('tr');
+                thDay.appendChild(trData); 
+                
+            }
+
+            
         } 
         
         )} // getWeather()
