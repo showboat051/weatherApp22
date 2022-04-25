@@ -4,10 +4,15 @@
     top: 20%;
     right: 42%;
     border: 1px solid black;
+    float: right;
+}
+
+h1 {
+    text-align: center;
 }
 
 body {
-    background-color: aqua;
+    background-image: linear-gradient(to right , rgb(129, 194, 214), rgb(78, 223, 35));
 }
 
 /* #submit{
